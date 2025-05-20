@@ -68,3 +68,16 @@
   * : uniq : removes duplicate words
   * : wc -l : counts the number of lines - which equals the number of unique words.
   * : wget -O "desired name" url : download file with desired name
+
+## Processes, ports
+
+* ps -C firefox -o pid,ppid : shows process ID and Parend process ID of firefox
+* pkill firefox - To kill firefox
+* kill -9 9454 - To kill firefox, and 9454 is the process ID extracted through ps -C firefox -o pid,ppid
+* ps -eo pid,ppid,cmd,comm,%cpu --sort=%cpu |head -n 4 : shows top 3 processes by CPU uses and details about the processes.
+* ps -eo pid,ppid,cmd,comm,%mem --sort=%mem |head -n 4 : shows top 3 processes by Memory usage uses and details about the processes.
+* python3 -m http.server 8000: 8000 is the default server port we may ignore passing 8000 in command
+* kill -9 486705 : this will kill the python3 server using the Process ID. Process ID is found using "ps -e | grep python3"
+* sudo python3 -m hhtp.server 90 : since port 1 to 1023 are privilage port we need to add "sudo"
+* ss -tu : displays all active connections and the corresponding TCP/ UDP ports
+* ss -ltnup 'sport = :5432' : displays the process that is listening on port 5432
