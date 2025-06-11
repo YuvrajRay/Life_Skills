@@ -24,7 +24,7 @@ awk is a scripting language, and it is helpful when working in the command line.
    
     - Syntax : awk -F: '{print $1}' file_name -> By default awk separates columns by white-space, but using -F: it can be set to ':'.
     - Variation:
-      - awk -F: '{print $1}' file_name.csv
+      - awk -F, '{print $1}' file_name.csv
       - awk -F, '{print $1}' file_name -> This will separate columns by ','.
 
 4. Condition based print
